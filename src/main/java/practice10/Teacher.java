@@ -1,0 +1,78 @@
+package practice10;
+
+import java.util.LinkedList;
+import java.util.stream.Collectors;
+
+public class Teacher extends Person{
+    private int klassNum = 0;
+    private Klass klass;
+    private LinkedList<Klass> classes;
+
+
+    public Teacher(int id, String name, int age) {
+        super(id, name, age);
+    }
+
+    public Teacher(int id, String name, int age, int klassNum) {
+        super(id, name, age);
+        this.klassNum = klassNum;
+    }
+
+    public Teacher(int id, String name, int age, Klass klass) {
+        super(id,name, age);
+        this.klass = klass;
+    }
+
+    public Teacher(int id, String name, int age, LinkedList<Klass> classes) {
+        super(id,name, age);
+        this.classes = classes;
+    }
+
+    public LinkedList<Klass> getClasses() {
+        return classes;
+    }
+
+    public Klass getKlass() {
+        return klass;
+    }
+
+    public int getKlassNum() {
+        return klassNum;
+    }
+
+    public String introduce() {
+        String introduce = "";
+        if (klass != null) {
+            introduce = " I teach Class " + klass.getNumber() + ".";
+        } else if (classes != null) {
+            introduce = " I teach Class ";
+            String classInfo = classes.stream()
+                    .map(klass -> String.valueOf(klass.getNumber()))
+                    .collect(Collectors.joining(", ")) + ".";
+            introduce += classInfo;
+        } else {
+            introduce = " I teach No Class.";
+        }
+        return "My name is " + super.getName() + ". I am " + super.getAge() +
+                " years old. I am a Teacher." + introduce;
+    }
+
+    public String introduceWith(Student student) {
+        String introduce = "";
+        if (isTeaching(student)) {
+            introduce = " I teach " + student.getName() + ".";
+        } else {
+            introduce = " I don't teach " + student.getName() + ".";
+        }
+        return "My name is " + super.getName() + ". I am " + super.getAge() +
+                " years old. I am a Teacher." + introduce;
+    }
+
+    public boolean isTeaching(Student student) {
+        return classes.stream()
+                .map(klass -> klass.getNumber() == (student.getKlass().getNumber()))
+                .findAny()
+                .orElse(false);
+    }
+}
+

@@ -1,16 +1,16 @@
 package practice06;
 
 public class Klass {
-    private int i;
-    public Klass(int i) {
-        this.i = i;
+    private final int classNum;
+    public Klass(int classNum) {
+        this.classNum = classNum;
     }
 
     public int getNumber() {
-        return i;
+        return classNum;
     }
 
     public String getDisplayName() {
-        return "Class " + i;
+        return "Class " + classNum;
     }
 }

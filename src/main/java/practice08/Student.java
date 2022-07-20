@@ -1,6 +1,6 @@
 package practice08;
 
-import practice08.Klass;
+import constant.Common;
 
 public class Student extends Person{
     private int klassNum;
@@ -33,13 +33,9 @@ public class Student extends Person{
     }
 
     public String introduce() {
-        String introduce = "";
         if (klass.getLeader() != null) {
-            introduce = " Leader of Class " + klass.getNumber() + ".";
-        } else {
-            introduce = " at Class " + klass.getNumber() + ".";
+            return Common.commonStudentLeader(super.getName(), super.getAge(), klass.getNumber());
         }
-        return "My name is " + super.getName() + ". I am " + super.getAge() +
-                " years old. I am a Student. I am" + introduce;
+        return Common.commonStudentNoLeader(super.getName(), super.getAge(), klass.getNumber());
     }
 }

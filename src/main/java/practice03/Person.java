@@ -1,5 +1,7 @@
 package practice03;
 
+import constant.Constant;
+
 public class Person {
     private final String name;
     private final int age;
@@ -18,6 +20,6 @@ public class Person {
     }
 
     public String introduce() {
-        return "My name is " + name + ". I am " + age + " years old.";
+        return String.format(Constant.PERSON_INTRODUCE, name, age);
     }
 }

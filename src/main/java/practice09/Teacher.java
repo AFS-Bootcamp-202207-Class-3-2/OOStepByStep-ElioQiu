@@ -1,7 +1,7 @@
 package practice09;
 
-import practice09.Klass;
-import practice09.Student;
+import constant.Common;
+import constant.Constant;
 
 import java.util.LinkedList;
 import java.util.stream.Collectors;
@@ -44,31 +44,22 @@ public class Teacher extends Person{
     }
 
     public String introduce() {
-        String introduce = "";
         if (klass != null) {
-            introduce = " I teach Class " + klass.getNumber() + ".";
+            return Common.commonTeacherTeachClass(super.getName(), super.getAge(), klass.getNumber());
         } else if (classes != null) {
-            introduce = " I teach Class ";
-            String classInfo = classes.stream()
+            String classList = classes.stream()
                     .map(klass -> String.valueOf(klass.getNumber()))
                     .collect(Collectors.joining(", ")) + ".";
-            introduce += classInfo;
-        } else {
-            introduce = " I teach No Class.";
+            return Common.commonTeacherTeachClassList(super.getName(), super.getAge(), classList);
         }
-        return "My name is " + super.getName() + ". I am " + super.getAge() +
-                " years old. I am a Teacher." + introduce;
+        return Common.commonTeacherNoTeachClass(super.getName(), super.getAge());
     }
 
     public String introduceWith(Student student) {
-        String introduce = "";
         if (isTeaching(student)) {
-            introduce = " I teach " + student.getName() + ".";
-        } else {
-            introduce = " I don't teach " + student.getName() + ".";
+            return Common.commonTeacherTeachPerson(super.getName(), super.getAge(), student.getName());
         }
-        return "My name is " + super.getName() + ". I am " + super.getAge() +
-                " years old. I am a Teacher." + introduce;
+        return Common.commonTeacherNoTeachPerson(super.getName(), super.getAge(), student.getName());
     }
 
     public boolean isTeaching(Student student) {

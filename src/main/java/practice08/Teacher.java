@@ -1,7 +1,6 @@
 package practice08;
 
-import practice08.Klass;
-import practice08.Student;
+import constant.Common;
 
 public class Teacher extends Person{
     private int klassNum = 0;
@@ -30,24 +29,16 @@ public class Teacher extends Person{
     }
 
     public String introduce() {
-        String introduce = "";
-        if (klass != null) {
-            introduce = " I teach Class " + klass.getNumber() + ".";
-        } else {
-            introduce = " I teach No Class.";
+        if (this.klass != null) {
+            return Common.commonTeacherTeachClass(super.getName(), super.getAge(), klass.getNumber());
         }
-        return "My name is " + super.getName() + ". I am " + super.getAge() +
-                " years old. I am a Teacher." + introduce;
+        return Common.commonTeacherNoTeachClass(super.getName(), super.getAge());
     }
 
     public String introduceWith(Student student) {
-        String introduce = "";
-        if (klass.getNumber() != student.getKlass().getNumber()) {
-            introduce = " I don't teach " + student.getName() + ".";
-        } else {
-            introduce = " I teach " + student.getName() + ".";
+        if (klass.getNumber() == student.getKlass().getNumber()) {
+            return Common.commonTeacherTeachPerson(super.getName(), super.getAge(), student.getName());
         }
-        return "My name is " + super.getName() + ". I am " + super.getAge() +
-                " years old. I am a Teacher." + introduce;
+        return Common.commonTeacherNoTeachPerson(super.getName(), super.getAge(), student.getName());
     }
 }

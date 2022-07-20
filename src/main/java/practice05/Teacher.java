@@ -1,5 +1,7 @@
 package practice05;
 
+import constant.Constant;
+
 public class Teacher extends Person{
     private int klass = 0;
 
@@ -17,13 +19,13 @@ public class Teacher extends Person{
     }
 
     public String introduce() {
-        String introduce = "";
         if (klass != 0) {
-            introduce = " I teach Class " + klass + ".";
-        } else {
-            introduce = " I teach No Class.";
+            return String.join(" ",
+                    String.format(Constant.PERSON_INTRODUCE, super.getName(), super.getAge()),
+                    String.format(Constant.TEACHER_TEACH_CLASS, klass));
         }
-        return "My name is " + super.getName() + ". I am " + super.getAge() +
-                " years old. I am a Teacher." + introduce;
+        return String.join(" ",
+                String.format(Constant.PERSON_INTRODUCE, super.getName(), super.getAge()),
+                Constant.TEACHER_NO_TEACH_CLASS);
     }
 }

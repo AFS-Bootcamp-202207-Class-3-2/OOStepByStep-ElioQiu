@@ -1,5 +1,7 @@
 package practice06;
 
+import constant.Constant;
+
 public class Student extends Person{
     private int klassNum;
     private Klass klass;
@@ -14,17 +16,13 @@ public class Student extends Person{
         this.klass = klass;
     }
 
-    public int getKlassNum() {
-        return klassNum;
-    }
-
     public Klass getKlass() {
         return klass;
     }
 
-
     public String introduce() {
-        return "My name is " + super.getName() + ". I am " + super.getAge() +
-                " years old. I am a Student. I am at Class " + klass.getNumber() + ".";
+        return String.join(" ",
+                String.format(Constant.PERSON_INTRODUCE, super.getName(), super.getAge()),
+                String.format(Constant.STUDENT_INTRODUCE, klass.getNumber()));
     }
 }

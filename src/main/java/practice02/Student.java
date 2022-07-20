@@ -1,5 +1,7 @@
 package practice02;
 
+import constant.Constant;
+
 public class Student extends Person{
     public int klass;
 
@@ -13,6 +15,6 @@ public class Student extends Person{
     }
 
     public String introduce() {
-        return "I am a Student. I am at Class " + klass + ".";
+        return String.format(Constant.STUDENT_INTRODUCE, klass);
     }
 }

@@ -1,15 +1,15 @@
 package practice07;
 
 public class Klass {
-    private int i;
+    private int classNum;
     private Student leader;
 
-    public Klass(int i) {
-        this.i = i;
+    public Klass(int classNum) {
+        this.classNum = classNum;
     }
 
     public int getI() {
-        return i;
+        return classNum;
     }
 
     public Student getLeader() {
@@ -17,11 +17,11 @@ public class Klass {
     }
 
     public int getNumber() {
-        return i;
+        return classNum;
     }
 
     public String getDisplayName() {
-        return "Class " + i;
+        return "Class " + classNum;
     }
 
     public void assignLeader(Student student) {

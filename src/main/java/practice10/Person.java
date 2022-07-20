@@ -1,5 +1,7 @@
 package practice10;
 
+import constant.Constant;
+
 import java.util.Objects;
 
 public class Person {
@@ -26,7 +28,7 @@ public class Person {
     }
 
     public String introduce() {
-        return "My name is " + name + ". I am " + age + " years old.";
+        return String.format(Constant.PERSON_INTRODUCE, name, age);
     }
 
     @Override

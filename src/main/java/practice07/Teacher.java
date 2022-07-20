@@ -30,15 +30,15 @@ public class Teacher extends Person {
 
     public String introduce() {
         if (this.klass != null) {
-            return Common.commonTeacherTeachClass(super.getName(), super.getAge(), klass.getNumber());
+            return Common.commonTeacherTeachClass(super.introduce(), klass.getNumber());
         }
-        return Common.commonTeacherNoTeachClass(super.getName(), super.getAge());
+        return Common.commonTeacherNoTeachClass(super.introduce());
     }
 
     public String introduceWith(Student student) {
         if (klass.getNumber() == student.getKlass().getNumber()) {
-            return Common.commonTeacherTeachPerson(super.getName(), super.getAge(), student.getName());
+            return Common.commonTeacherTeachPerson(super.introduce(), student.getName());
         }
-        return Common.commonTeacherNoTeachPerson(super.getName(), super.getAge(), student.getName());
+        return Common.commonTeacherNoTeachPerson(super.introduce(), student.getName());
     }
 }

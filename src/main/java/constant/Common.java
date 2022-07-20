@@ -1,45 +1,45 @@
 package constant;
 
 public class Common {
-    public static String commonTeacherTeachClass(String name, int age, int klassNumber) {
+    public static String commonTeacherTeachClass(String personIntroduce, int klassNumber) {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, name, age),
+                personIntroduce,
                 String.format(Constant.TEACHER_TEACH_CLASS, klassNumber));
     }
 
-    public static String commonTeacherNoTeachClass(String name, int age) {
+    public static String commonTeacherNoTeachClass(String personIntroduce) {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, name, age),
+                personIntroduce,
                 Constant.TEACHER_NO_TEACH_CLASS);
     }
 
-    public static String commonTeacherTeachPerson(String name, int age, String student) {
+    public static String commonTeacherTeachPerson(String personIntroduce, String student) {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, name, age),
+                personIntroduce,
                 String.format(Constant.TEACHER_TEACH_PERSON, student));
     }
 
-    public static String commonTeacherNoTeachPerson(String name, int age, String student) {
+    public static String commonTeacherNoTeachPerson(String personIntroduce, String student) {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, name, age),
+                personIntroduce,
                 String.format(Constant.TEACHER_NO_TEACH_PERSON, student));
     }
 
-    public static String commonTeacherTeachClassList(String name, int age, String classList) {
+    public static String commonTeacherTeachClassList(String personIntroduce, String classList) {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, name, age),
+                personIntroduce,
                 String.format(Constant.TEACHER_TEACH_CLASS_LIST, classList));
     }
 
-    public static String commonStudentLeader(String name, int age, int classNum) {
+    public static String commonStudentLeader(String personIntroduce, int classNum) {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, name, age),
+                personIntroduce,
                 String.format(Constant.STUDENT_LEADER_INTRODUCE, classNum));
     }
 
-    public static String commonStudentNoLeader(String name, int age, int classNum) {
+    public static String commonStudentNoLeader(String personIntroduce, int classNum) {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, name, age),
+                personIntroduce,
                 String.format(Constant.STUDENT_INTRODUCE, classNum));
     }
 }

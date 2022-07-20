@@ -17,7 +17,7 @@ public class Student extends Person{
 
     public String introduce() {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, super.getName(), super.getAge()),
+                super.introduce(),
                 String.format(Constant.STUDENT_INTRODUCE, klass));
     }
 }

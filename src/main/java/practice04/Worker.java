@@ -9,7 +9,7 @@ public class Worker extends Person{
 
     public String introduce() {
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, super.getName(), super.getAge()),
+                super.introduce(),
                 Constant.WORKER_INTRODUCE);
     }
 }

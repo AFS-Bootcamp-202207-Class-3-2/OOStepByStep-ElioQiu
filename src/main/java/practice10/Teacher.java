@@ -44,21 +44,21 @@ public class Teacher extends Person{
 
     public String introduce() {
         if (klass != null) {
-            return Common.commonTeacherTeachClass(super.getName(), super.getAge(), klass.getNumber());
+            return Common.commonTeacherTeachClass(super.introduce(), klass.getNumber());
         } else if (classes != null) {
             String classList = classes.stream()
                     .map(klass -> String.valueOf(klass.getNumber()))
                     .collect(Collectors.joining(", ")) + ".";
-            return Common.commonTeacherTeachClassList(super.getName(), super.getAge(), classList);
+            return Common.commonTeacherTeachClassList(super.introduce(), classList);
         }
-        return Common.commonTeacherNoTeachClass(super.getName(), super.getAge());
+        return Common.commonTeacherNoTeachClass(super.introduce());
     }
 
     public String introduceWith(Student student) {
         if (isTeaching(student)) {
-            return Common.commonTeacherTeachPerson(super.getName(), super.getAge(), student.getName());
+            return Common.commonTeacherTeachPerson(super.introduce(), student.getName());
         }
-        return Common.commonTeacherNoTeachPerson(super.getName(), super.getAge(), student.getName());
+        return Common.commonTeacherNoTeachPerson(super.introduce(), student.getName());
     }
 
     public boolean isTeaching(Student student) {

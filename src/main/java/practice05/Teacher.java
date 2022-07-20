@@ -21,11 +21,11 @@ public class Teacher extends Person{
     public String introduce() {
         if (klass != 0) {
             return String.join(" ",
-                    String.format(Constant.PERSON_INTRODUCE, super.getName(), super.getAge()),
+                    super.introduce(),
                     String.format(Constant.TEACHER_TEACH_CLASS, klass));
         }
         return String.join(" ",
-                String.format(Constant.PERSON_INTRODUCE, super.getName(), super.getAge()),
+                super.introduce(),
                 Constant.TEACHER_NO_TEACH_CLASS);
     }
 }

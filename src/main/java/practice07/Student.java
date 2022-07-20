@@ -27,8 +27,8 @@ public class Student extends Person {
 
     public String introduce() {
         if (klass.getLeader() != null) {
-            return Common.commonStudentLeader(super.getName(), super.getAge(), klass.getNumber());
+            return Common.commonStudentLeader(super.introduce(), klass.getNumber());
         }
-        return Common.commonStudentNoLeader(super.getName(), super.getAge(), klass.getNumber());
+        return Common.commonStudentNoLeader(super.introduce(), klass.getNumber());
     }
 }

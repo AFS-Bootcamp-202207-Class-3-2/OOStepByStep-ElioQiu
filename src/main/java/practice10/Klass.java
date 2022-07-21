@@ -12,10 +12,6 @@ public class Klass {
         this.classNum = classNum;
     }
 
-    public int getI() {
-        return classNum;
-    }
-
     public Student getLeader() {
         return leader;
     }
@@ -31,7 +27,6 @@ public class Klass {
     public void assignLeader(Student student) {
         if(!this.studentList.contains(student)){
             System.out.print("It is not one of us.\n");
-            this.leader = null;
         }else {
             System.out.printf("I am Tom. I know %s become Leader of Class 2.\n", student.getName());
             this.leader = student;

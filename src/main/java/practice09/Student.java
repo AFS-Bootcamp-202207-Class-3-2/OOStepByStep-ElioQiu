@@ -16,16 +16,8 @@ public class Student extends Person{
         this.klass = klass;
     }
 
-    public int getKlassNum() {
-        return klassNum;
-    }
-
     public Klass getKlass() {
         return klass;
-    }
-
-    public void setKlassNum(int klassNum) {
-        this.klassNum = klassNum;
     }
 
     public void setKlass(Klass klass) {

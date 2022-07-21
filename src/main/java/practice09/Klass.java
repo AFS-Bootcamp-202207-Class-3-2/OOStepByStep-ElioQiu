@@ -8,12 +8,8 @@ public class Klass {
     private Student leader;
     public List<Student> studentList = new ArrayList<>();
 
-    public Klass(int i) {
-        this.classNum = i;
-    }
-
-    public int getI() {
-        return classNum;
+    public Klass(int classNum) {
+        this.classNum = classNum;
     }
 
     public Student getLeader() {
@@ -31,7 +27,6 @@ public class Klass {
     public void assignLeader(Student student) {
         if(!this.studentList.contains(student)){
             System.out.print("It is not one of us.\n");
-            this.leader = null;
         }else {
             this.leader = student;
         }
